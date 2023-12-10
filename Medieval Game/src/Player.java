@@ -7,8 +7,16 @@ public class Player implements Serializable {
     private final String name;
     private double health;
 
+    private Weapon currentWeapon;
+
+    private helmet Helmet;
+    private shirt Shirt;
+    private pants Pant;
+    private shoes Shoe;
+
     public Player(String name){
         this.name = name;
+        this.currentWeapon = new Weapon(("Rusty Short Sword"), 3);
         this.health = 100;
     }
 
@@ -42,5 +50,22 @@ public class Player implements Serializable {
         if (this.health > 100) {
             this.health = 100;
         }
+    }
+
+    public String getCurrentWeapon() {
+        return "Currently wielding: " + currentWeapon.getName() + " | This weapon does " + currentWeapon.getDamage() + " damage. \n";
+    }
+
+    @Override
+    public String toString() {
+        return "\nCurrent Player: \n" +
+        "Name: " + name + "\n" +
+        "Health: " + getHealth() + "\n" +
+        getCurrentWeapon() +
+        "Equipped Armour: " + "\n" +
+        "   Helmet: " + Helmet +
+        "   Shirt: " + Shirt +
+        "   Trousers: " + Pant +
+        "   Shoes: " + Shoe;
     }
 }

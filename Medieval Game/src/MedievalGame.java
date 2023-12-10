@@ -17,7 +17,7 @@ public class MedievalGame {
 
         game.save(); //Temporary to remove error.
 
-        //Create Start Menu with greeting and ask to create a character.
+        System.out.println(game.player);
     }
 
 
